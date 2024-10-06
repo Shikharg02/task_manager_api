@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Show
+    {% endblock title %}
+    {% block body %}
+
+    <center><h3> Your Task List </h3></center>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sno</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      {% for task in all_task %}
+      <tr>
+          <td scope="row">{{loop.index}}</td>
+          <td >{{task.title}}</td>
+          <td >{{task.desc}}</td>
+          <td >{{task.date_created}}</td>
+          <td >{{task.time_created}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    {% endblock body %}
